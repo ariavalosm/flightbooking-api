@@ -1,15 +1,3 @@
-/*const http = require("http");
-
-const server = http.createServer((req, res) =>{
-  res.status = 200;
-  res.setHeader ("Content-Type", "text/plain");
-  res.end("Hello World");
-});
-
-server.listen(3000, () =>{
-  console.log("server on port 3000")
-});*/
-
 const express = require("express");
 const app = express();
 
@@ -19,6 +7,10 @@ app.get("/", (req, res) =>{
 
 app.get("/about", (req, res) =>{
   res.send("wenas");
+});
+
+app.get("/test", (req, res) =>{
+  res.send("<h1>test</h1>");
 });
 
 app.listen(3000, () => {
