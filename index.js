@@ -1,18 +1,17 @@
 const express = require("express");
 const app = express();
-const morgan = required ("morgan");
 
 //settings
-app.set("port", 3000)
+app.set("port", process.env.PORT || 3000);
+app.set("json spaces", 2)
 
-// middlewares(
-app.use(morgan("dev"));
+// middlewares
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //routes
 app.get("/", (req,res) =>{
-  res.send("hello,world");
+  res.json({"Title": "Hello, world"});
 });
 
 // starting the server
