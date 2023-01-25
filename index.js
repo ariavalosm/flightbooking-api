@@ -9,7 +9,8 @@ app.set("json spaces", 2)
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
-
+//routes
+app.use(require("./routes/index"));
 
 // starting the server
 app.listen(app.get("port"), () => {
