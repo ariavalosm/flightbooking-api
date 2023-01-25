@@ -3,19 +3,19 @@ const router = Router();
 
 const datos = require("../sample.json");
 
-router.get("/info", (req,res) =>{
-  res.json("datos");
+router.get("/", (req,res) =>{
+  res.json(datos);
 });
 
 router.post("/", (req,res) =>{
   const { name, lastname, nationality, doctype, docnumber } = req.body;
   if(name && lastname && nationality && doctype && docnumber){
-    datos.length +1;
-    const newData = {... req.body}
-    //datos.push();
-    res.json("saved");
+    const id = datos.length +1;
+    const newData = {... req.body, id}
+    datos.push(newData);
+    res.json(datos)
   } else {
-    res.send("wrong request");
+    res.status(500).json({error : "hay un error"});
   }
 
 });
