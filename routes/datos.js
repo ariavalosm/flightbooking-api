@@ -8,7 +8,12 @@ router.get("/datos", (req,res) =>{
 });
 
 router.post("/", (req,res) =>{
-  console.log(req.body)
+  const { name, lastname, nationality, doctype, docnumber } = req.body;
+  if(name && lastname && nationality && doctype && docnumber){
+    res.json("saved");
+  } else {
+    res.send("wrong request");
+  }
   res.send("holi");
 });
 
