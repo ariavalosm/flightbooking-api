@@ -9,10 +9,7 @@ app.set("json spaces", 2)
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
-//routes
-app.get("/", (req,res) =>{
-  res.json({"Title": "Hello, world"});
-});
+
 
 // starting the server
 app.listen(app.get("port"), () => {
