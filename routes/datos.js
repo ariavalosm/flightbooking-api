@@ -10,6 +10,7 @@ router.get("/info", (req,res) =>{
 router.post("/", (req,res) =>{
   const { name, lastname, nationality, doctype, docnumber } = req.body;
   if(name && lastname && nationality && doctype && docnumber){
+    datos.length +1;
     const newData = {... req.body}
     //datos.push();
     res.json("saved");
