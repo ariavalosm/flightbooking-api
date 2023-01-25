@@ -11,6 +11,7 @@ app.use(express.json());
 
 //routes
 app.use(require("./routes/index"));
+app.use(require("./routes/datos"));
 
 // starting the server
 app.listen(app.get("port"), () => {
