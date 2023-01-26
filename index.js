@@ -10,7 +10,6 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //routes
-app.use(require("./routes/index"));
 app.use("/api/datos", require("./routes/datos"));
 
 // starting the server

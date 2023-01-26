@@ -9,9 +9,9 @@ router.get("/", (req,res) =>{
 
 router.post("/", (req,res) =>{
   const { name, lastname, nationality, doctype, docnumber } = req.body;
+  const id = datos.length +1;
+  const newData = {... req.body, id}
   if(name && lastname && nationality && doctype && docnumber){
-    const id = datos.length +1;
-    const newData = {... req.body, id}
     datos.push(newData);
     res.json(datos)
   } else {
