@@ -13,7 +13,7 @@ app.use(express.json());
 //routes
 app.use(require('./routes'));
 app.use('/api/datos', require('./routes/datos'));
-app.use('/api/ciudades', require('./routes/ciudades'));
+//app.use('/api/ciudades', require('./routes/ciudades'));
 
 // starting the server
 app.listen(app.get('port'), () => {
