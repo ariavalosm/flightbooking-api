@@ -8,16 +8,15 @@ router.get("/", (req,res) =>{
 });
 
 router.post("/", (req,res) =>{
-  const { name, lastname, nationality, doctype, docnumber } = req.body;
   const id = datos.length +1;
+  const { name, lastname, nationality, doctype, docnumber } = req.body;
   const newData = {... req.body, id}
   if(name && lastname && nationality && doctype && docnumber){
     datos.push(newData);
-    res.json(datos)
+    res.json(datos);
   } else {
     res.status(500).json({error : "hay un error"});
   }
-
 });
 
 
