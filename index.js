@@ -10,7 +10,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //routes
-app.use("/api/datos", require("./routes/datos"));
+app.use(require('./routes'));
+app.use('/api/datos', require('./routes/datos'));
 
 // starting the server
 app.listen(app.get("port"), () => {
