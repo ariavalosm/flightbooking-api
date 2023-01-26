@@ -20,7 +20,12 @@ router.post("/", (req,res) =>{
 });
 
 router.delete("/:id", (req, res) => {
-  
+  const { id } = req.params;
+  _.each(datos, (dato, i) =>{
+    if (dato.id == id){
+      datos.splice(i ,1);
+    }
+  });
 })
 
 
