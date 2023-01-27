@@ -12,7 +12,7 @@ router.post("/", (req,res) =>{
   const id = datos.length +1;
   const { name, lastname, nationality, doctype, docnumber } = req.body;
   const newData = {... req.body, id}
-  if(name && lastname && nationality && doctype && docnumber){
+  if (![name, lastname, nationality, doctype, docnumber].includes("")){
     datos.push(newData);
     res.json(datos);
   } else {
@@ -24,7 +24,7 @@ router.put('/:id', (req, res) =>{
   const { id } = req.params;
   const { name, lastname, nationality, doctype, docnumber } = req.body;
   if(name && lastname && nationality && doctype && docnumber){
-    _.each(datos, (dato, i) =>{
+  _.each(datos, (dato, i) =>{
       if (datos.id === id) {
         dato.name = name;
         dato.lastname = lastname;
