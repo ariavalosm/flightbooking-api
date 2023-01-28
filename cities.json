@@ -1,9 +1,9 @@
 [
   {  
-    "Id": "1",
-    "desde": "Buenos Aires",
-    "hacia":"Argentina",
-    "desde": "Buenos Aires",
-    "hacia":"Argentina"
+    "Id": "",
+    "desde": "",
+    "hacia":"",
+    "horaSalida": "",
+    "horaRetorno":""
   }
 ]
