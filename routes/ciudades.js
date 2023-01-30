@@ -23,7 +23,7 @@ router.post("/", (req,res) =>{
 router.put('/:id', (req, res) =>{
   const { id } = req.params;
   const { desde, hacia, fechaSalida, fechaRetorno } = req.body;
-  if(name && lastname && nationality && doctype && docnumber){
+  if  (desde && hacia && fechaSalida && fechaRetorno){
   _.each(datos, (dato, i) =>{
       if (datos.id === id) {
         dato.name = name;
