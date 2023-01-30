@@ -13,7 +13,7 @@ router.post("/", (req,res) =>{
   const newTrip = {... req.body, id}
   if (![desde, hacia, fechaSalida, fechaRetorno].includes("")){
     trips.push(newTrip);
-    res.json(trips);
+    res.json(cities);
   } else {
     res.status(500).json({error : "hay un error"});
   }
@@ -21,8 +21,23 @@ router.post("/", (req,res) =>{
 });
 
 router.put('/:id', (req, res) =>{
- 
-});
+  const { id } = req.params;
+  const { name, lastname, nationality, doctype, docnumber } = req.body;
+  if(name && lastname && nationality && doctype && docnumber){
+  _.each(datos, (dato, i) =>{
+      if (datos.id === id) {
+        dato.name = name;
+        dato.lastname = lastname;
+        dato.nationality = nationality;
+        dato.doctype = doctype;
+        dato.docnumber = docnumber;
+    }
+  });
+      res.json(movies);
+  } else {
+      res.status(500).json({error : "hay un error"});
+  }
+  });
 
 
 router.delete("/:id", (req, res) => {
