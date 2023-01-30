@@ -24,13 +24,13 @@ router.put('/:id', (req, res) =>{
   const { id } = req.params;
   const { desde, hacia, fechaSalida, fechaRetorno } = req.body;
   if  (desde && hacia && fechaSalida && fechaRetorno){
-  _.each(datos, (dato, i) =>{
-      if (datos.id === id) {
-        dato.name = name;
-        dato.lastname = lastname;
-        dato.nationality = nationality;
-        dato.doctype = doctype;
-        dato.docnumber = docnumber;
+  _.each(trips, (trip, i) =>{
+      if (trips.id === id) {
+        trip.desde = desde;
+        trip.hacia = hacia;
+        trip.fechaSalida = fechaSalida;
+        trip.fechaRetorno = fechaRetorno;
+  
     }
   });
       res.json(movies);
