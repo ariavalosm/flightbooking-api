@@ -30,10 +30,10 @@ router.put('/:id', (req, res) =>{
         trip.hacia = hacia;
         trip.fechaSalida = fechaSalida;
         trip.fechaRetorno = fechaRetorno;
-  
+
     }
   });
-      res.json(movies);
+      res.json(trips);
   } else {
       res.status(500).json({error : "hay un error"});
   }
