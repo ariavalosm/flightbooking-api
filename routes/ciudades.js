@@ -41,7 +41,15 @@ router.put('/:id', (req, res) =>{
 
 
 router.delete("/:id", (req, res) => {
-
+  const { id } = req.params;
+  if (id){
+    _.each(datos, (dato, i) =>{
+      if (dato.id == id){
+        datos.splice(i ,1);
+  } 
+});
+  res.json(datos);
+}
 });
 
 module.exports = router;
