@@ -30,7 +30,6 @@ router.put('/:id', (req, res) =>{
         trip.hacia = hacia;
         trip.fechaSalida = fechaSalida;
         trip.fechaRetorno = fechaRetorno;
-
     }
   });
       res.json(trips);
@@ -43,12 +42,12 @@ router.put('/:id', (req, res) =>{
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   if (id){
-    _.each(datos, (dato, i) =>{
-      if (dato.id == id){
-        datos.splice(i ,1);
+    _.each(trips, (trip, i) =>{
+      if (trip.id == id){
+        trips.splice(i ,1);
   } 
 });
-  res.json(datos);
+  res.json(trips);
 }
 });
 
