@@ -5,7 +5,7 @@ const _ = require('underscore');
 const trips = require("../trip.json");
 
 router.get("/", (req,res) =>{
-  res.json(cities);
+  res.json(trips);
 });
 
 router.post("/", (req,res) =>{
@@ -14,7 +14,7 @@ router.post("/", (req,res) =>{
   const newTrip = {... req.body, id}
   if (![desde, hacia, fechaSalida, fechaRetorno].includes("")){
     trips.push(newTrip);
-    res.json(cities);
+    res.json(trips);
   } else {
     res.status(500).json({error : "hay un error"});
   }
