@@ -1,16 +1,12 @@
-const { Router } = require("express");
-const router = Router();
-const _ = require('underscore');
+import express from "express";
+import ciudadesController from "../controllers/ciudadesController";
 
-const trips = require("../trip.json");
+const router = express.Router();
+
 
 router.get("/", );
-
 router.post("/",);
-
 router.put('/:id', );
-
-
 router.delete("/:id", );
 
 export default router;
